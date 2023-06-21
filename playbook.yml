@@ -1,0 +1,9 @@
+---
+- name: Post deploy config
+  hosts: devservers
+  remote_user: ubuntu
+  vars:
+    ansible_ssh_private_key_file: ../terraform/terraform-key-pair.pem
+  tasks:
+    - name: Test 1
+      ansible.builtin.command: free -h
